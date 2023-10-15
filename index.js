@@ -9,7 +9,8 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q66zrl2.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sabbir.0dgpj5g.mongodb.net/?retryWrites=true&w=majority`;
+
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,7 +19,7 @@ const client = new MongoClient(uri, {
 
 const run = async () => {
   try {
-    const db = client.db("jobbox");
+    const db = client.db("jobbox-server");
     const userCollection = db.collection("user");
     const jobCollection = db.collection("job");
 
